@@ -2,6 +2,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootStats", "BootStats\BootStats.csproj", "{D56D6F08-003E-4B97-A1D6-F483652AF0FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{52F6D83C-5D34-43AC-9249-ABB9471432C7} = {52F6D83C-5D34-43AC-9249-ABB9471432C7}
+		{87E9AFC2-B2CE-4214-AFEE-55BCF5F8254B} = {87E9AFC2-B2CE-4214-AFEE-55BCF5F8254B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSharp.MVC", "Externals\WebSharp\WebSharp.MVC\WebSharp.MVC.csproj", "{87E9AFC2-B2CE-4214-AFEE-55BCF5F8254B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSharp", "Externals\WebSharp\WebSharp\WebSharp.csproj", "{52F6D83C-5D34-43AC-9249-ABB9471432C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +21,14 @@ Global
 		{D56D6F08-003E-4B97-A1D6-F483652AF0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D56D6F08-003E-4B97-A1D6-F483652AF0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D56D6F08-003E-4B97-A1D6-F483652AF0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87E9AFC2-B2CE-4214-AFEE-55BCF5F8254B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87E9AFC2-B2CE-4214-AFEE-55BCF5F8254B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87E9AFC2-B2CE-4214-AFEE-55BCF5F8254B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87E9AFC2-B2CE-4214-AFEE-55BCF5F8254B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52F6D83C-5D34-43AC-9249-ABB9471432C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52F6D83C-5D34-43AC-9249-ABB9471432C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52F6D83C-5D34-43AC-9249-ABB9471432C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52F6D83C-5D34-43AC-9249-ABB9471432C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

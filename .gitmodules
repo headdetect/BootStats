@@ -1,0 +1,3 @@
+[submodule "Externals/WebSharp"]
+	path = Externals/WebSharp
+	url = git://github.com/SirCmpwn/WebSharp.git

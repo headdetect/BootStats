@@ -32,53 +32,68 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Griffin.Networking">
-      <HintPath>X:\Projects\WebSharp\WebSharp.MVC\bin\Debug\Griffin.Networking.dll</HintPath>
+      <HintPath>..\Externals\WebSharp\lib\Griffin.Networking.dll</HintPath>
     </Reference>
     <Reference Include="Griffin.Networking.Protocol.Http">
-      <HintPath>X:\Projects\WebSharp\WebSharp.MVC\bin\Debug\Griffin.Networking.Protocol.Http.dll</HintPath>
+      <HintPath>..\Externals\WebSharp\lib\Griffin.Networking.Protocol.Http.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack">
-      <HintPath>X:\Projects\WebSharp\WebSharp.MVC\bin\Debug\HtmlAgilityPack.dll</HintPath>
+      <HintPath>..\Externals\WebSharp\lib\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>X:\Projects\WebSharp\WebSharp.MVC\bin\Debug\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\Externals\WebSharp\lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\WebSharp\lib\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WebSharp">
-      <HintPath>X:\Projects\WebSharp\WebSharp.MVC\bin\Debug\WebSharp.dll</HintPath>
+      <HintPath>..\Externals\WebSharp\WebSharp\obj\Debug\WebSharp.dll</HintPath>
     </Reference>
     <Reference Include="WebSharp.MVC">
-      <HintPath>X:\Projects\WebSharp\WebSharp.MVC\bin\Debug\WebSharp.MVC.dll</HintPath>
+      <HintPath>..\Externals\WebSharp\WebSharp.MVC\obj\Debug\WebSharp.MVC.dll</HintPath>
     </Reference>
     <Reference Include="Xipton.Razor">
-      <HintPath>X:\Projects\WebSharp\WebSharp.MVC\bin\Debug\Xipton.Razor.dll</HintPath>
+      <HintPath>..\Externals\WebSharp\lib\Xipton.Razor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="BootStats.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Static\font\fontawesome-webfont.eot" />
+    <None Include="Static\font\fontawesome-webfont.ttf" />
+    <None Include="Static\font\fontawesome-webfont.woff" />
+    <None Include="Static\font\FontAwesome.otf" />
+    <None Include="Views\Pages\Login.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Views\Shared\_Layout.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Views\Shared\_Navigation.cshtml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Views\Index\Index.cshtml">
+    <None Include="Views\Pages\Index.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Views\_ViewStart.cshtml">
@@ -86,7 +101,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <None Include="Static\css\login.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Static\js\app.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Static\css\bootstrap.min.css">
@@ -108,7 +128,20 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="Static\css\font-awesome.min.css" />
+    <Content Include="Static\favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Static\font\fontawesome-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir $(TargetDir)Static\
+xcopy $(ProjectDir)Static\* $(TargetDir)Static\* /i /s /y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
