@@ -73,6 +73,7 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="BootStats.cs" />

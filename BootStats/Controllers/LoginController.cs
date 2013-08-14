@@ -3,6 +3,7 @@ using BootStats.Model;
 using WebSharp;
 using WebSharp.MVC;
 using System.Linq;
+using WebSharp.MVC.Results;
 
 namespace BootStats.Controllers
 {
@@ -10,7 +11,7 @@ namespace BootStats.Controllers
     {
         public ActionResult Login()
         {
-            return View("Pages/Login.cshtml");
+            return View("Pages/Login.cshtml", resolveExact: true);
         }
 
         public ActionResult DoLogin(string username, string password)
@@ -18,8 +19,8 @@ namespace BootStats.Controllers
             Console.WriteLine("Login Request => {0} {1}", username, password);
             User found = BootStats.Users.FirstOrDefault(user => user.Login(username, password));
             return found != null ? 
-                View("/Index", new { uname = username }, HttpStatusCodes.MovedTemp) : 
-                View("Pages/Login.cshtml", new { success = false, name = username }, HttpStatusCodes.BadRequest);
+                Redirect("/Index") :
+                View("Pages/Login.cshtml", new { success = false, name = username }, HttpStatusCode.BadRequest, true);
         }
 
 
