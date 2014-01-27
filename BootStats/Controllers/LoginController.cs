@@ -9,9 +9,9 @@ namespace BootStats.Controllers
 {
     public class LoginController : Controller
     {
-        public ActionResult Login()
+        public ActionResult Index()
         {
-            return View("Pages/Login.cshtml", resolveExact: true);
+            return View();
         }
 
         public ActionResult DoLogin(string username, string password)
@@ -20,7 +20,7 @@ namespace BootStats.Controllers
             User found = BootStats.Users.FirstOrDefault(user => user.Login(username, password));
             return found != null ? 
                 Redirect("/Index") :
-                View("Pages/Login.cshtml", new { success = false, name = username }, HttpStatusCode.BadRequest, true);
+                View(model: new { success = false, name = username }, status: HttpStatusCode.BadRequest);
         }
 
 

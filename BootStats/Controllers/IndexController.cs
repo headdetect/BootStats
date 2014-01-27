@@ -12,7 +12,7 @@ namespace BootStats.Controllers
     {
         public ActionResult Index()
         {
-            return View("Pages/Index.cshtml");
+            return View();
         }
     }
 }
