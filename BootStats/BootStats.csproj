@@ -71,8 +71,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Model\Model.cs" />
@@ -88,13 +88,13 @@
     <None Include="Static\font\fontawesome-webfont.ttf" />
     <None Include="Static\font\fontawesome-webfont.woff" />
     <None Include="Static\font\FontAwesome.otf" />
-    <None Include="Views\Pages\Login.cshtml">
+    <None Include="Views\Index\Index.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Views\Shared\_Layout.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Views\Pages\Index.cshtml">
+    <None Include="Views\Admin\Index.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Views\_ViewStart.cshtml">
