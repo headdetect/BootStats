@@ -58,10 +58,9 @@ namespace BootStats
             mvc.RegisterController(new TestController());
 
             // Index //
-            mvc.AddRoute("Login", "/", new { controller = "Login", action = "Index" });
-            mvc.AddRoute("Login", "{action}", new { controller = "Login", action = "DoLogin" });
+            mvc.AddRoute("Login", "{action}", new { controller = "Index", action = "Index" });
+            mvc.AddRoute("Login", "{action}", new { controller = "Index", action = "DoLogin" });
            
-
             mvc.AddRoute("Admin", "{controller}", new { controller = "Admin", action = "Index" });
 
             mvc.AddRoute("Test", "{action}", new { controller = "Test", action = "TestRedirect" });

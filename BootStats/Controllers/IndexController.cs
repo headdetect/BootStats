@@ -19,7 +19,7 @@ namespace BootStats.Controllers
             Console.WriteLine("Login Request => {0} {1}", username, password);
             User found = BootStats.Users.FirstOrDefault(user => user.Login(username, password));
             return found != null ? 
-                Redirect("Index") :
+                Redirect("/Admin") :
                 View("Index", model: new { success = false, name = username }, status: HttpStatusCode.BadRequest);
         }
 

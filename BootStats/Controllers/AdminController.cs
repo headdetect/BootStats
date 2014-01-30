@@ -12,6 +12,7 @@ namespace BootStats.Controllers
     {
         public ActionResult Index()
         {
+            // TODO: Session authentication //
             return View();
         }
     }
